@@ -1,30 +1,28 @@
 package Temperature;
 
 
-import Task1.Duck;
-import Task1.Flyable;
-import Task1.Human;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
-import static Temperature.Convert.scanner;
-import static Temperature.Fahrenheit.degree;
+
+
 
 public class Main {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("В какие единицы перевести");
         System.out.println("F - Фаренгейты");
         System.out.println("K - Кельвины");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+
 
         String input;
-        while (!(input = reader.readLine()).isEmpty()) {
+        while (!(input = scanner.next()).isEmpty()) {
+            System.out.println("Введите градусы");
 
-            Object object = null;
+            Convert object = null;
             switch (input) {
                 case "F":
                     object = new Fahrenheit();
@@ -37,15 +35,8 @@ public class Main {
 
 
             }
-            System.out.println("Введите градусы");
-            degree = scanner.nextInt();
-            if (object instanceof Fahrenheit) {
-                ((Convert) object).convert();
-            }
+            System.out.println(object.convert(scanner.nextInt()));
 
-            if (object instanceof Kelvin) {
-                ((Convert) object).convert();
-            }
         }
     }
 }
