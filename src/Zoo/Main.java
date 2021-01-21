@@ -1,5 +1,7 @@
 package Zoo;
 
+import Task1.Swimmable;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,11 +12,11 @@ public class Main {
 
         while (true) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            Object object = null;
-           String input = reader.readLine();
+            AbstractAnimal animal = null;
+            String input = reader.readLine();
 
 
-            if (input.equals("")){
+            if (input.equals("")) {
                 System.out.println("Стоп");
                 break;
             }
@@ -23,23 +25,36 @@ public class Main {
 
                 case "Cat":
                     System.out.println("Создан кот");
-                    object = new Cat();
+                    animal = new Cat();
                     break;
                 case "Tiger":
                     System.out.println("Создан тигр");
-                    object = new Tiger();
+                    animal = new Tiger();
                     break;
                 case "Duck":
                     System.out.println("Создана утка");
-                    object = new Duck();
+                    animal = new Duck();
+
+                default:
+                    System.out.println("Unknown Animal");
+
+            }
+            if (animal instanceof Fly) {
+                ((Fly) animal).fly();
             }
 
+            if (animal instanceof Run) {
+                ((Run) animal).run();
+            }
+
+            if (animal instanceof Climb) {
+                ((Climb) animal).climb();
 
 
-
+            }
 
         }
-
     }
-
 }
+
+

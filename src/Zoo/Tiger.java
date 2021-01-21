@@ -1,10 +1,6 @@
 package Zoo;
 
-public class Tiger implements Run, Climb {
-    public Tiger(){
-        climb();
-        run();
-    }
+public class Tiger extends AbstractAnimal implements  Climb{
     @Override
     public void climb() {
         System.out.println("Тигр бегает");
@@ -12,9 +8,5 @@ public class Tiger implements Run, Climb {
 
     }
 
-    @Override
-    public void run() {
-        System.out.println("Тигр бегает");
 
-    }
 }

@@ -1,10 +1,6 @@
 package Zoo;
 
-public class Cat implements Run, Climb{
-    public Cat(){
-        run();
-        climb();
-    }
+public class Cat extends AbstractAnimal implements Run, Climb{
     @Override
     public void run() {
         System.out.println("Кот бегает");
@@ -17,4 +13,5 @@ public class Cat implements Run, Climb{
         System.out.println("Кот лазает");
 
     }
+
 }
