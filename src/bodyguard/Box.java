@@ -1,4 +1,4 @@
-package Bodyguard;
+package bodyguard;
 
 public class Box extends BodyGuard {
 

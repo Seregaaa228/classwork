@@ -1,13 +1,19 @@
-package Bodyguard;
+package bodyguard;
 
 abstract class BodyGuard   {
     Gun gun;
+    AK47 ak47;
 
   public BodyGuard(Gun gun){
       this.gun = gun;
 
   }
-  public BodyGuard(){
+
+    public BodyGuard(AK47 ak47) {
+        this.ak47 = ak47;
+    }
+
+    public BodyGuard(){
 
   }
 
